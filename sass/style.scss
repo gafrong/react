@@ -1,0 +1,32 @@
+@import "bourbon/bourbon";
+@import "neat/neat";
+
+$primary-color: red;
+ 
+@mixin omega-reset($nth) {
+  &:nth-child(#{$nth}) { margin-right: flex-gutter($grid-columns, $gutter); }
+  &:nth-child(#{$nth}+1) { clear: none }
+}
+ 
+#app {
+
+  .seats {
+    @include outer-container(100%);
+    @include span-columns(6);
+   
+    div {
+      background-color: yellow;
+      @include span-columns(1);
+      @include omega(2n);
+      margin-bottom: 1em;
+   
+    /*i*/
+    }
+  }
+
+  .info {
+    background-color: tomato;
+  }
+  
+}
+ 
